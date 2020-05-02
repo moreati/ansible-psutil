@@ -9,9 +9,6 @@
           echo $!
       register: sleepers
 
-    - debug:
-        var: sleepers
-
     - psutil_kill:
         pids: "{{ sleepers.stdout_lines }}"
       register: killers
