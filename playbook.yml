@@ -9,6 +9,6 @@
           echo $!
       register: sleepers
 
-    - psutil_kill:
+    - moreati.psutil.psutil_kill:
         pids: "{{ sleepers.stdout_lines }}"
       register: killers
