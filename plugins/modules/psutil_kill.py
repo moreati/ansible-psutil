@@ -85,17 +85,17 @@ def run_module():
             msg=missing_required_lib('psutil'),
             exception=PSUTIL_IMP_TRACEBACK,
         )
-    
+
     processes_killed = []
     for pid in module.params['pids']:
         try:
             process = psutil.Process(pid)
             if not module.check_mode:
-                process.kill()            
+                process.kill()
         except psutil.NoSuchProcess:
             continue
         processes_killed.append({"pid": pid})
-    
+
     module.exit_json(
         changed=bool(processes_killed),
         killed=processes_killed,
