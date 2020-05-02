@@ -8,3 +8,9 @@ with the [psutils](https://pypyi/project/psutils) package.
 ### Modules
 
 - psutil_kill
+
+## Installation
+
+```sh
+ansible-galaxy collection install moreati.psutil
+```
